@@ -1,0 +1,18 @@
+## Interface: 30300
+## Author: phyber
+## Title: Broker Digicam
+## Notes: Control screenshot format and quality via LDB displays
+## Version: @project-version@
+## OptionalDeps: Ace3
+## SavedVariables: BrokerDigicamDB
+## X-Category: Interface Enhancements
+## X-Embeds: Ace3
+
+#@no-lib-strip@
+embeds.xml
+#@end-no-lib-strip@
+
+Locales\locales.xml
+
+LibDataBroker-1.1.lua
+Digicam.lua
