@@ -2,7 +2,7 @@ Broker_Digicam = LibStub("AceAddon-3.0"):NewAddon("Broker_Digicam")
 local self, Broker_Digicam = Broker_Digicam, Broker_Digicam
 local LDB = LibStub:GetLibrary("LibDataBroker-1.1")
 local LQT = LibStub("LibQTip-1.0")
---local L = LibStub("AceLocale-3.0"):GetLocale("Broker_Digicam")
+local L = LibStub("AceLocale-3.0"):GetLocale("Broker_Digicam")
 local dataobj = LDB:NewDataObject("Broker_Digicam", {
 	type = "data source",
 	text = "Digicam",
@@ -83,21 +83,21 @@ function Broker_Digicam:DrawTooltip()
 
 	-- Image Format
 	linenum = tooltip:AddLine(nil)
-	tooltip:SetCell(linenum, 1, ColourText("Image Format", NFC))
+	tooltip:SetCell(linenum, 1, ColourText(L["Image Format"], NFC))
 	tooltip:SetCell(linenum, 2, string_upper(ssFormat))
 	tooltip:SetLineScript(linenum, "OnMouseUp", Broker_Digicam.SetFormat, ssFormat)
 
 	-- Image Quality
 	linenum = tooltip:AddLine(nil)
-	tooltip:SetCell(linenum, 1, ColourText("Image Quality", NFC))
+	tooltip:SetCell(linenum, 1, ColourText(L["Image Quality"], NFC))
 	tooltip:SetCell(linenum, 2, ssQuality)
 	tooltip:SetLineScript(linenum, "OnMouseUp", Broker_Digicam.SetQuality, ssQuality)
 
 	-- Hints
 	tooltip:AddLine(" ", " ")
-	tooltip:AddLine("|cffffff00Shift-Click|r |cff00ff00broker icon to take a screenshot.|r")
-	tooltip:AddLine("|cffffff00Left-Click|r |cff00ff00quality to increase.|r")
-	tooltip:AddLine("|cffffff00Alt-Left-Click|r |cff00ff00quality to decrease.|r")
+	tooltip:AddLine(L["|cffffff00Shift-Click|r |cff00ff00broker icon to take a screenshot.|r"])
+	tooltip:AddLine(L["|cffffff00Left-Click|r |cff00ff00quality to increase.|r"])
+	tooltip:AddLine(L["|cffffff00Alt-Left-Click|r |cff00ff00quality to decrease.|r"])
 	tooltip:Show()
 end
 
