@@ -1,4 +1,4 @@
-local L - LibStub("AceLocale-3.0"):NewLocale("Broker_Digicam", "deDE")
+local L = LibStub("AceLocale-3.0"):NewLocale("Broker_Digicam", "deDE")
 if not L then return end
 -- Menu text
 L["Image Format"] = "Bildformat"

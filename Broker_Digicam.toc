@@ -1,6 +1,6 @@
 ## Interface: 30300
 ## Author: phyber
-## Title: Broker Digicam
+## Title: Broker: Digicam
 ## Notes: Control screenshot format and quality via LDB displays
 ## Version: @project-version@
 ## OptionalDeps: Ace3
