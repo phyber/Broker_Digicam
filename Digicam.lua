@@ -8,6 +8,7 @@ local dataobj = LDB:NewDataObject("Broker_Digicam", {
 	text = "Digicam",
 	icon = "Interface\\Icons\\INV_Misc_Spyglass_03",
 })
+local string_upper = string.upper
 local string_format = string.format
 local tonumber = tonumber
 local GetAddOnMetadata = GetAddOnMetadata
@@ -83,7 +84,7 @@ function Broker_Digicam:DrawTooltip()
 	-- Image Format
 	linenum = tooltip:AddLine(nil)
 	tooltip:SetCell(linenum, 1, ColourText("Image Format", NFC))
-	tooltip:SetCell(linenum, 2, ssFormat)
+	tooltip:SetCell(linenum, 2, string_upper(ssFormat))
 	tooltip:SetLineScript(linenum, "OnMouseUp", Broker_Digicam.SetFormat, ssFormat)
 
 	-- Image Quality
