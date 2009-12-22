@@ -1,4 +1,4 @@
-Broker_Digicam = LibStub("AceAddon-3.0"):NewAddon("Broker_Digicam")
+Broker_Digicam = {}
 local self, Broker_Digicam = Broker_Digicam, Broker_Digicam
 local LDB = LibStub:GetLibrary("LibDataBroker-1.1")
 local LQT = LibStub("LibQTip-1.0")
@@ -98,6 +98,14 @@ function Broker_Digicam:DrawTooltip()
 	tooltip:AddLine(L["|cffffff00Shift-Click|r |cff00ff00broker icon to take a screenshot.|r"])
 	tooltip:AddLine(L["|cffffff00Left-Click|r |cff00ff00quality to increase.|r"])
 	tooltip:AddLine(L["|cffffff00Alt-Left-Click|r |cff00ff00quality to decrease.|r"])
+
+	-- Show it
+	-- Now we want to slightly override what SmartAnchorTo did
+	-- Since it will anchor to the corners, but we want the menu positioned
+	-- centrally over the icon, like other Broker doodads.
+	local p, rT, rP, x, y = tooltip:GetPoint()
+	tooltip:ClearAllPoints()
+	tooltip:SetPoint(p, rT, rP, -(tooltip:GetWidth()/2), y)
 	tooltip:Show()
 end
 

@@ -6,7 +6,7 @@
 ## OptionalDeps: Ace3
 ## SavedVariables: BrokerDigicamDB
 ## X-Category: Interface Enhancements
-## X-Embeds: Ace3
+## X-Embeds: AceLocale-3.0
 
 #@no-lib-strip@
 embeds.xml
