@@ -94,7 +94,7 @@ function Broker_Digicam:DrawTooltip()
 
 	-- Hints
 	tooltip:AddLine(" ", " ")
-	tooltip:AddLine("|cffffff00Shift-Click|r |cff00ff00 broker icon to take a screenshot.|r")
+	tooltip:AddLine("|cffffff00Shift-Click|r |cff00ff00broker icon to take a screenshot.|r")
 	tooltip:AddLine("|cffffff00Left-Click|r |cff00ff00quality to increase.|r")
 	tooltip:AddLine("|cffffff00Alt-Left-Click|r |cff00ff00quality to decrease.|r")
 	tooltip:Show()
