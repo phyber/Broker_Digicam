@@ -3,5 +3,5 @@
 
 	<Script file="Libs\LibStub\LibStub.lua"/>
 	<Include file="Libs\AceLocale-3.0\AceLocale-3.0.xml"/>
-
+	<Include file="Libs\LibQTip-1.0\lib.xml"/>
 </Ui>
