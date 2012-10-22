@@ -12,6 +12,8 @@ local string_upper = string.upper
 local string_format = string.format
 local tonumber = tonumber
 local GetAddOnMetadata = GetAddOnMetadata
+local GetMouseButtonClicked = GetMouseButtonClicked
+local SetCVar = SetCVar
 
 function Broker_Digicam:SetFormat(ssFormat)
 	-- Possible formats: tga, jpeg, png
@@ -44,7 +46,7 @@ end
 function Broker_Digicam:SetQuality(ssQuality)
 	ssQuality = tonumber(ssQuality)
 	-- Holt down Alt key to decrease quality
-	if IsAltKeyDown() then
+	if GetMouseButtonClicked() == "RightButton" then
 		if ssQuality > 0 then
 			ssQuality = ssQuality - 1
 			SetCVar("screenshotQuality", ssQuality)
@@ -64,6 +66,8 @@ function Broker_Digicam:HideTooltip()
 		return
 	end
 	tooltip:Hide()
+	LQT:ReleaseTooltip(tooltip)
+	tooltip = nil
 end
 
 local function ColourText(text, c)
