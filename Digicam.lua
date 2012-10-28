@@ -66,7 +66,7 @@ function Broker_Digicam:HideTooltip()
 		return
 	end
 	tooltip:Hide()
-	LQT:ReleaseTooltip(tooltip)
+	LQT:Release(tooltip)
 	tooltip = nil
 end
 
