@@ -101,7 +101,7 @@ function Broker_Digicam:DrawTooltip()
 	tooltip:AddLine(" ", " ")
 	tooltip:AddLine(L["|cffffff00Shift-Click|r |cff00ff00broker icon to take a screenshot.|r"])
 	tooltip:AddLine(L["|cffffff00Left-Click|r |cff00ff00quality to increase.|r"])
-	tooltip:AddLine(L["|cffffff00Alt-Left-Click|r |cff00ff00quality to decrease.|r"])
+	tooltip:AddLine(L["|cffffff00Right-Click|r |cff00ff00quality to decrease.|r"])
 
 	-- Show it
 	-- Now we want to slightly override what SmartAnchorTo did
