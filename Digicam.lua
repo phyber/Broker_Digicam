@@ -8,12 +8,14 @@ local dataobj = LDB:NewDataObject("Broker_Digicam", {
 	text = "Digicam",
 	icon = "Interface\\Icons\\INV_Misc_Spyglass_03",
 })
-local string_upper = string.upper
-local string_format = string.format
 local tonumber = tonumber
+local Screenshot = Screenshot
+local IsMacClient = IsMacClient
+local IsShiftKeyDown = IsShiftKeyDown
 local GetAddOnMetadata = GetAddOnMetadata
 local GetMouseButtonClicked = GetMouseButtonClicked
 local SetCVar = SetCVar
+local NORMAL_FONT_COLOR_CODE = NORMAL_FONT_COLOR_CODE
 
 function Broker_Digicam:SetFormat(ssFormat)
 	-- Possible formats: tga, jpeg, png
@@ -70,10 +72,6 @@ function Broker_Digicam:HideTooltip()
 	tooltip = nil
 end
 
-local function ColourText(text, c)
-	return string_format("|cff%2x%2x%2x%s|r", c.r * 255, c.g * 255, c.b * 255, text)
-end
-
 function Broker_Digicam:DrawTooltip()
 	tooltip:Hide()
 	tooltip:Clear()
@@ -82,18 +80,18 @@ function Broker_Digicam:DrawTooltip()
 	local ssQuality = GetCVar("screenshotQuality")
 	local NFC = NORMAL_FONT_COLOR
 	-- Header
-	tooltip:AddLine(ColourText(GetAddOnMetadata("Broker_Digicam", "Title"), NFC))
+	tooltip:AddLine(("%s%s|r"):format(NORMAL_FONT_COLOR_CODE, GetAddOnMetadata("Broker_Digicam", "Title")))
 	tooltip:AddLine(" ", " ")
 
 	-- Image Format
 	linenum = tooltip:AddLine(nil)
-	tooltip:SetCell(linenum, 1, ColourText(L["Image Format"], NFC))
-	tooltip:SetCell(linenum, 2, string_upper(ssFormat))
+	tooltip:SetCell(linenum, 1, ("%s%s|r"):format(NORMAL_FONT_COLOR_CODE, L["Image Format"]))
+	tooltip:SetCell(linenum, 2, ssFormat:upper())
 	tooltip:SetLineScript(linenum, "OnMouseUp", Broker_Digicam.SetFormat, ssFormat)
 
 	-- Image Quality
 	linenum = tooltip:AddLine(nil)
-	tooltip:SetCell(linenum, 1, ColourText(L["Image Quality"], NFC))
+	tooltip:SetCell(linenum, 1, ("%s%s|r"):format(NORMAL_FONT_COLOR_CODE, L["Image Quality"]))
 	tooltip:SetCell(linenum, 2, ssQuality)
 	tooltip:SetLineScript(linenum, "OnMouseUp", Broker_Digicam.SetQuality, ssQuality)
 
