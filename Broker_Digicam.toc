@@ -1,4 +1,4 @@
-## Interface: 60000
+## Interface: 60100
 ## Author: phyber
 ## Title: Broker: Digicam
 ## Notes: Control screenshot format and quality via LDB displays
